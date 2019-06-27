@@ -52,7 +52,8 @@ def plot_cluster(cluster):
     fo = open(r'./tmp.txt', 'w')
     fo.write('\n'.join(map(str, cls)))
     fo.close()
-    version = versiontuple(sklearn_version)[1] > 14
+    version = versiontuple(sklearn_version)
+
     if version[0] > 0 or version[1] > 14:
         mds = manifold.MDS(max_iter=200, eps=1e-4, n_init=1,
                            dissimilarity='precomputed')

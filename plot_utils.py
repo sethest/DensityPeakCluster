@@ -19,6 +19,11 @@ def plot_scatter_diagram(which_fig, x, y, x_label='x', y_label='y', title='title
     '''
     styles = ['k.', 'g.', 'r.', 'c.', 'm.', 'y.', 'b.']
     assert len(x) == len(y)
+
+    # 因為會報錯，所以我指定 style_list 為 None，先讓程式可以跑
+    style_list = None
+
+
     if style_list is not None:
         assert len(x) == len(style_list) and len(
             styles) >= len(set(style_list))
